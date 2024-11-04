@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa sonoro de Torbareo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="leaflet.css" />
+  <script src="leaflet.js"></script>
+</head>
+<body>
+    <header><h1>Mapa sonoro de Torbareo</h1></header>
+
+
+
+
+    <div class="main_content">
+<div class="mapa">
+    
+
+  <div id="map" style="width: 100%; height: 600px;"></div>
+  <script>
+    // Ajusta las dimensiones de la imagen
+    var imageUrl = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTJlenkyZ2ZieWNjeXcwZzBtem9mcjlnajk3MW10NGV0eW9jbGZpcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3og0IV7MOCfnm85iRa/giphy.webp';
+    var imageBounds = [[0, 0], [6000, 7000]]; // Coordenadas que cubrirán la imagen
+
+    // Crea el mapa
+    var map = L.map('map', {
+      crs: L.CRS.Simple, // Cambia el sistema de coordenadas para que se ajuste a la imagen
+      minZoom: -2, // Permite acercar y alejar
+    });
+
+
+    // Añade la imagen como un overlay
+    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+    // Ajusta la vista para que muestre toda la imagen
+    map.fitBounds(imageBounds);
+
+    // Puedes agregar marcadores en la imagen
+    var marker = L.marker([3000, 3500]).addTo(map)
+      .bindPopup('Un marcador sobre tu imagen')
+      .openPopup();
+  </script>
+
+
+</div>
+<div class="menu derecha">
+    <h3>Menu</h3>
+
+<ul>
+    <li><a href="">Sonido1</a></li>
+    <li><a href="">Sonido2</a></li>
+    <li><a href="">Sonido3</a></li>
+    <li><a href="">Sonido4</a></li>
+    <li><a href="">Sonido5</a></li>
+    <li><a href="">Sonido6</a></li>
+    <li><a href="">Sonido7</a></li>
+    <li><a href="">Sonido8</a></li>
+    <li><a href="">Sonido9</a></li>
+    <li><a href="">Sonido10</a></li>
+</ul>
+    </div>
+</div>
+</body>
+</html>
+
+
